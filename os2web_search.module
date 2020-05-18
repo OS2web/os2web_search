@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Updates placeholder.
+ */
+function os2web_search_form_views_exposed_form_alter(array &$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id) {
+  switch ($form['#id']) {
+    case 'views-exposed-form-os2web-search-os2web-search-page':
+      // Setting placeholder and adding class.
+      $form['sq']['#attributes']['placeholder'] = $form['#info']['filter-search_api_fulltext']['label'];
+      $form['sq']['#attributes']['class'][] = 'search-input__input';
+
+      // Cleaning the filter labels.
+      unset($form['#info']['filter-search_api_fulltext']['label']);
+
+      // Removing text value and adding class.
+      $form['actions']['submit']['#value'] = '';
+      $form['actions']['submit']['#attributes']['class'][] = 'search-input__button';
+
+      break;
+  }
+}

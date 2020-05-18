@@ -1,0 +1,17 @@
+langcode: da
+status: true
+dependencies: {  }
+id: os2web_search
+label: os2web_search
+description: ''
+folder: modules/contrib/os2web_search/config/optional
+module: {  }
+theme: {  }
+blacklist:
+  - 'os2web_search*'
+  - '*os2web_search'
+  - '*os2web_search*'
+graylist: {  }
+graylist_dependents: false
+graylist_skip_equal: false
+weight: 0
