@@ -1,0 +1,18 @@
+#!/bin/bash
+
+synonymdir=[path to synonyms]
+solrconfig=[path to SOLR core configuration]
+name=synonyms__lang_??__type_all__filter_none.txt
+files=($synonymdir$name)
+if [ -f $files ] ; then
+  echo "Files found in $synonymdir"
+  for file in $(ls $synonymdir$name); do
+    echo $file
+    lang=$(echo $file | cut -c 82- | cut -c -2)
+    syno=synonyms_
+    ext=.txt
+    newname=$syno$lang$ext
+    mv $file $solrconfig$newname
+  done
+  curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=[SOLR Core]"
+fi

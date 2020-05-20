@@ -34,6 +34,33 @@ Use Composer's built-in command for listing packages that have updates available
 composer outdated os2web/os2web_search
 ```
 
+## Synonyms activation
+In order to use search synonyms for search those actions need to be done:
+
+1. Enable synonyms module:
+    ```
+    drush en search_api_synonym
+    ```
+1. Add some synonyms: ```admin/config/search/search-api-synonyms```
+1. Make sure your cron is running
+1. Copy the script ```os2web_search/scripts/synonyms_deploy.sh.example``` into any directory outside Drupal and execute it each time right after the cron.
+
+   Script requires those variables to be set:
+   * ```synonymdir=[path to synonyms]```
+
+        Full path to synonyms export folder location e.g. /var/www/os2web.dk/web/sites/default/files/synonyms/
+   * ```solrconfig=[path to SOLR core configuration]```
+
+        Full path to SOLR core config folder e.g. /opt/solr/server/solr/sik/conf/
+   * ```[SOLR Core]```
+
+        SOLR Core name
+
+The script will work in the following way:
+* It checks the synonyms export location
+* If it has some files (matching the pattern), those files are moved to SOLR config location and renamed
+* After that the SOLR core is reloaded so that synonyms are active
+
 ## Automated testing and code quality
 See [OS2Web testing and CI information](https://github.com/OS2Web/docs#testing-and-ci)
 
