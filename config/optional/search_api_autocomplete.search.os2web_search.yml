@@ -15,7 +15,7 @@ suggester_settings:
   search_api_solr_suggester:
     search_api_solr/site_hash: 1
     search_api/index: os2web_search_content
-    drupal/langcode: any
+    drupal/langcode: multilingual
   search_api_solr_terms:
     fields: {  }
 suggester_weights:

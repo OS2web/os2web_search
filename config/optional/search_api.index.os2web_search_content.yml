@@ -76,6 +76,16 @@ field_settings:
       view_mode:
         'entity:node':
           os2web_page: default
+  rendered_item_spellcheck:
+    label: 'Rendered HTML output (spellcheck)'
+    property_path: rendered_item
+    type: solr_text_spellcheck
+    configuration:
+      roles:
+        anonymous: anonymous
+      view_mode:
+        'entity:node':
+          os2web_page: default
   status:
     label: Published
     datasource_id: 'entity:node'
@@ -128,21 +138,38 @@ processor_settings:
     all_fields: true
     fields:
       - rendered_item
+      - rendered_item_spellcheck
       - title
       - type
     title: true
     alt: true
     tags:
       b: 2
-      em: 1
       h1: 5
       h2: 3
       h3: 2
       strong: 2
-      u: 1
     weights:
       preprocess_index: -15
       preprocess_query: -15
+  ignore_character:
+    all_fields: true
+    fields:
+      - rendered_item
+      - rendered_item_spellcheck
+      - title
+      - type
+    ignorable: '[''¿¡!?,.:;]'
+    ignorable_classes:
+      - Pc
+      - Pe
+      - Pf
+      - Pi
+      - Po
+      - Ps
+    weights:
+      preprocess_index: -10
+      preprocess_query: -10
   language_with_fallback: {  }
   rendered_item: {  }
   solr_date_range:
