@@ -8,11 +8,11 @@ if [ -f $files ] ; then
   echo "Files found in $synonymdir"
   for file in $(ls $synonymdir$name); do
     echo $file
-    lang=$(echo $file | cut -c 82- | cut -c -2)
+    lang=$(echo $file | cut -c 68- | cut -c -2)
     syno=synonyms_
     ext=.txt
     newname=$syno$lang$ext
-    mv $file $solrconfig$newname
+    cp $file $solrconfig$newname
   done
   curl "http://localhost:8983/solr/admin/cores?action=RELOAD&core=[SOLR Core]"
 fi
