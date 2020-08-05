@@ -237,7 +237,7 @@ display:
           expose:
             label: ''
           plugin_id: search_api
-      title: 'OS2Web Search'
+      title: Søgning
       header:
         area:
           id: area
