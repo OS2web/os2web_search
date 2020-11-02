@@ -5,8 +5,10 @@ dependencies:
     - search_api_solr
     - node
     - search_api
+    - os2web_search
   config:
     - search_api.server.os2web_search_server
+    - core.entity_view_mode.node.search_index
 third_party_settings:
   search_api_solr:
     finalize: false
@@ -75,7 +77,7 @@ field_settings:
         anonymous: anonymous
       view_mode:
         'entity:node':
-          os2web_page: default
+          os2web_page: search_index
   rendered_item_spellcheck:
     label: 'Rendered HTML output (spellcheck)'
     property_path: rendered_item

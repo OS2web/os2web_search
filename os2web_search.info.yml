@@ -6,6 +6,8 @@ package: OS2Web
 dependencies:
   - search_api
   - search_api_autocomplete
+  - search_api_attachments
   - search_api_solr
   - search_api_spellcheck
-  
+
+
