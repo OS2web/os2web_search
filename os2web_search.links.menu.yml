@@ -1,0 +1,6 @@
+config.os2web_search.menu:
+  title: Search phrases
+  route_name: entity.os2web_search_phrase.collection
+  description: 'List of search phrases used to elevate the results.'
+  parent: system.admin_structure
+

@@ -1,0 +1,10 @@
+# All action links for this module
+
+os2web_search_phrase.add:
+  # Which route will be called by the link
+  route_name: os2web_search_phrase.add
+  title: 'Add new search phrase'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.os2web_search_phrase.collection

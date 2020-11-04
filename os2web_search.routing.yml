@@ -1,0 +1,41 @@
+entity.os2web_search_phrase.collection:
+  path: '/admin/structure/searchphrase'
+  defaults:
+  # Calls the list controller, defined in the annotation of the Search phrase entity.
+    _entity_list: 'os2web_search_phrase'
+    _title: 'Search phrase list'
+  requirements:
+    _permission: 'administer search_api'
+
+os2web_search_phrase.add:
+  path: '/admin/structure/searchphrase/add'
+  defaults:
+  # Calls the form.add controller, defined in the Search phrase entity.
+    _entity_form: os2web_search_phrase.add
+    _title: 'Add search phrase'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer search_api'
+
+entity.os2web_search_phrase.edit_form:
+  path: '/admin/structure/searchphrase/{os2web_search_phrase}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the Search phrase entity.
+    _entity_form: os2web_search_phrase.edit
+    _title: 'Edit search phrase'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer search_api'
+
+entity.os2web_search_phrase.delete_form:
+  path: '/admin/structure/searchphrase/{os2web_search_phrase}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the Search phrase entity.
+    _entity_form: os2web_search_phrase.delete
+    _title: 'Delete search phrase'
+  options:
+    _admin_route: TRUE
+  requirements:
+    _permission: 'administer search_api'

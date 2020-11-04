@@ -1,5 +1,12 @@
 <?php
 
+use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
+use Drupal\search_api\Query\QueryInterface;
+use Drupal\search_api\Query\ResultSetInterface;
+use Solarium\QueryType\Select\Result\Result;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+
 /**
  * Implements hook_form_FORM_ID_alter().
  *
@@ -20,5 +27,37 @@ function os2web_search_form_views_exposed_form_alter(array &$form, \Drupal\Core\
       $form['actions']['submit']['#attributes']['class'][] = 'search-input__button';
 
       break;
+  }
+}
+
+/**
+ * Implements hook_search_api_solr_search_results_alter().
+ *
+ * If this is exclusive search and we have only one result, perfoming redirect
+ * to a selected node.
+ */
+function os2web_search_search_api_solr_search_results_alter(ResultSetInterface $result_set, QueryInterface $query, Result $result) {
+  if ($query->getOption('solr_param_exclusive') == 'true' && $result->count() == 1) {
+    $resultItems = $result_set->getResultItems();
+
+    /** @var \Drupal\search_api\Item\Item $item */
+    $item = array_pop($resultItems);
+
+    // Item is stored like entity:node/2:da
+    $itemId = $item->getId();
+    preg_match('/entity:node\/(\d*):.*/', $itemId, $matches);
+    $nodeId = $matches[1];
+
+    $node = Node::load($nodeId);
+
+    // Performing redirect to this node.
+    $response = new RedirectResponse($node->toUrl()->toString());
+    $request = \Drupal::request();
+    // Save the session so things like messages get saved.
+    $request->getSession()->save();
+    $response->prepare($request);
+    // Make sure to trigger kernel events.
+    \Drupal::service('kernel')->terminate($request, $response);
+    $response->send();
   }
 }
