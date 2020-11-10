@@ -7,6 +7,7 @@ dependencies:
     - search_api
     - os2web_search
   config:
+    - field.storage.node.field_os2web_page_section
     - search_api.server.os2web_search_server
     - core.entity_view_mode.node.search_index
 third_party_settings:
@@ -68,6 +69,14 @@ field_settings:
     dependencies:
       module:
         - node
+  field_os2web_page_section:
+    label: Sektion
+    datasource_id: 'entity:node'
+    property_path: field_os2web_page_section
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_os2web_page_section
   rendered_item:
     label: 'Rendered HTML output'
     property_path: rendered_item
@@ -126,6 +135,11 @@ processor_settings:
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
+  hierarchy:
+    fields:
+      field_os2web_page_section: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
   highlight:
     highlight: always
     highlight_partial: true
@@ -173,6 +187,9 @@ processor_settings:
       preprocess_index: -10
       preprocess_query: -10
   language_with_fallback: {  }
+  os2web_search_phrase_catcher:
+    weights:
+      preprocess_query: 0
   rendered_item: {  }
   solr_date_range:
     weights:

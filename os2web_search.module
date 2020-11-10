@@ -4,6 +4,7 @@ use Drupal\Core\Url;
 use Drupal\node\Entity\Node;
 use Drupal\search_api\Query\QueryInterface;
 use Drupal\search_api\Query\ResultSetInterface;
+use Drupal\search_api\Utility\Utility;
 use Solarium\QueryType\Select\Result\Result;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
@@ -43,10 +44,13 @@ function os2web_search_search_api_solr_search_results_alter(ResultSetInterface $
     /** @var \Drupal\search_api\Item\Item $item */
     $item = array_pop($resultItems);
 
-    // Item is stored like entity:node/2:da
+    // Item is stored like "entity:node/2:da".
     $itemId = $item->getId();
-    preg_match('/entity:node\/(\d*):.*/', $itemId, $matches);
-    $nodeId = $matches[1];
+
+    // getting raw_id like "2:da".
+    list(, $raw_id) = Utility::splitCombinedId($item->getId());
+    // getting $nodeId as numeric value.
+    list($nodeId, ) = Utility::splitPropertyPath($raw_id);
 
     $node = Node::load($nodeId);
 
