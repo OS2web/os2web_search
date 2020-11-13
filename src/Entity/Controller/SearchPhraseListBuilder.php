@@ -75,8 +75,14 @@ class SearchPhraseListBuilder extends EntityListBuilder {
     $row['phrase'] = $entity->getPhrase();
     $row['exclusive'] = ($entity->isExclusive()) ? $this->t('Yes') : $this->t('No');
 
-    $start_date = \Drupal::service('date.formatter')->format($entity->getStartDate()->getTimestamp(), 'os2core_datetime_medium');
-    $end_date = \Drupal::service('date.formatter')->format($entity->getEndDate()->getTimestamp(), 'os2core_datetime_medium');
+    $start_date = '';
+    if ($entity->getStartDate()) {
+      $start_date = \Drupal::service('date.formatter')->format($entity->getStartDate()->getTimestamp(), 'os2core_datetime_medium');
+    }
+    $end_date = '';
+    if ($entity->getEndDate()) {
+      $end_date = \Drupal::service('date.formatter')->format($entity->getEndDate()->getTimestamp(), 'os2core_datetime_medium');
+    }
 
     $row['period_start_date'] = $start_date;
     $row['period_end_date'] = $end_date;
