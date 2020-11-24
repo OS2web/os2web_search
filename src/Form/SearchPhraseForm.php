@@ -7,7 +7,6 @@ use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Form controller for the os2web_search_phrase entity edit forms.
- * @ingroup bc_search
  */
 class SearchPhraseForm extends ContentEntityForm {
 

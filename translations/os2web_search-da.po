@@ -58,3 +58,40 @@ msgstr "Dato og tidspunkt, hvor denne search phrase er aktiv"
 
 msgid "List of search phrases used to elevate the results."
 msgstr "Liste over fraser, der bruges til at hæve resultaterne."
+
+msgid "Word"
+msgstr "Ord"
+
+msgid "The word we are defining synonyms for."
+msgstr "Ordet der defineres synonymer for"
+
+msgid "Language"
+msgstr "Sprog"
+
+msgid "Add synonym"
+msgstr "Synonymer"
+
+msgid "Updated"
+msgstr "Opdateret"
+
+msgid "Apply"
+msgstr "Anvend"
+
+msgid "Spelling error"
+msgstr "Stavefejl"
+
+msgid "The type of synonym."
+msgstr "Synonymtype"
+
+msgid "The synonyms to the word. Separate multiple by comma."
+msgstr "Synonymer til order. Flere ord skal deles med komma"
+
+msgid "Only active synonyms will be used."
+msgstr "Kun aktive synonymer vil blive brugt"
+
+msgid "Activate synonym"
+msgstr "Aktivér synonym"
+
+msgid "The user ID of author of the Synonym entity."
+msgstr "User ID på forfatteren af synonym entiteten."
+
