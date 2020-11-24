@@ -55,3 +55,6 @@ msgstr "Noden ID for den henviste node. Skift vægten ved at omorganisere elemen
 
 msgid "Datetime when this search phrase is active"
 msgstr "Dato, hvor denne søgeudtryk er aktiv"
+
+msgid "List of search phrases used to elevate the results."
+msgstr "Liste af search phraees, der bruges til at hæve resultaterne."
