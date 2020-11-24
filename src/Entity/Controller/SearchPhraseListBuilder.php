@@ -59,7 +59,7 @@ class SearchPhraseListBuilder extends EntityListBuilder {
    */
   public function buildHeader() {
     $header['id'] = $this->t('ID');
-    $header['phrase'] = $this->t('Phrase');
+    $header['phrase'] = $this->t('Text');
     $header['exclusive'] = $this->t('Exclusive');
     $header['period_start_date'] = $this->t('From');
     $header['period_end_date'] = $this->t('To');

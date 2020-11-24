@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>1);\n"
 
 msgid "Search phrase list"
-msgstr "Search phrase liste"
+msgstr "Liste over search phrases"
 
 msgid "Add new search phrase"
 msgstr "Tilføj ny search phrase"
@@ -23,8 +23,8 @@ msgstr "Tilføj search phrase"
 msgid "The search phrase that is used."
 msgstr "Den brugte search phrase."
 
-msgid "Phrase"
-msgstr "Frase"
+msgid "Text"
+msgstr "Tekst"
 
 msgid "Exclusive"
 msgstr "Eksklusiv"
@@ -36,25 +36,25 @@ msgid "To"
 msgstr "Til"
 
 msgid "Operations"
-msgstr "Operationer"
+msgstr "Handlinger"
 
 msgid "Edit"
-msgstr "Regiger"
+msgstr "Rediger"
 
 msgid "Delete"
 msgstr "Slet"
 
 msgid "If exclusive, only the specified results will be returned"
-msgstr "Hvis det er eksklusivt, returneres kun de angivne resultater"
+msgstr "Hvis frasen er eksklusiv, vil kun de angivne resultater vises"
 
 msgid "Referring items"
 msgstr "Henvisende emner"
 
 msgid "The node ID of the referenced node. Change the weight by reordering elements."
-msgstr "Noden ID for den henviste node. Skift vægten ved at omorganisere elementer."
+msgstr "NodeID for den node der henvises til. Skift vægten ved at omorganisere elementer."
 
 msgid "Datetime when this search phrase is active"
-msgstr "Dato, hvor denne søgeudtryk er aktiv"
+msgstr "Dato og tidspunkt, hvor denne search phrase er aktiv"
 
 msgid "List of search phrases used to elevate the results."
-msgstr "Liste af search phraees, der bruges til at hæve resultaterne."
+msgstr "Liste over fraser, der bruges til at hæve resultaterne."
