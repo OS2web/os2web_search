@@ -1,3 +1,9 @@
+//TODO:
+1. Can only be installed when EN and DA are present
+2. required search_api_attachments
+3. change index mode (search index)
+
+
 # OS2Web Search Drupal module  [![Build Status](https://travis-ci.org/OS2web/os2web_search.svg?branch=master)](https://travis-ci.org/OS2web/os2web_nemlogin)
 
 ## Module purpose
@@ -60,6 +66,15 @@ The script will work in the following way:
 * It checks the synonyms export location
 * If it has some files (matching the pattern), those files are moved to SOLR config location and renamed
 * After that the SOLR core is reloaded so that synonyms are active
+
+## Module translation
+Module's main language is English but Danish language is fully supported.
+
+When extending this module add your translations to the corresponding **\*.po** files located ```modules/contrib/os2web_search/translations/``` and run the following to update translations:
+```
+drush locale-check
+drush locale-update && drush cr
+```
 
 ## Automated testing and code quality
 See [OS2Web testing and CI information](https://github.com/OS2Web/docs#testing-and-ci)

@@ -1,0 +1,57 @@
+# Danish translation of OS2Web Search (8.x)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OS2Web Search (8.x)\n"
+"POT-Creation-Date: 2020-11-24 11:00+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n>1);\n"
+
+msgid "Search phrase list"
+msgstr "Search phrase liste"
+
+msgid "Add new search phrase"
+msgstr "Tilføj ny search phrase"
+
+msgid "Add search phrase"
+msgstr "Tilføj search phrase"
+
+msgid "The search phrase that is used."
+msgstr "Den brugte search phrase."
+
+msgid "Phrase"
+msgstr "Frase"
+
+msgid "Exclusive"
+msgstr "Eksklusiv"
+
+msgid "From"
+msgstr "Fra"
+
+msgid "To"
+msgstr "Til"
+
+msgid "Operations"
+msgstr "Operationer"
+
+msgid "Edit"
+msgstr "Regiger"
+
+msgid "Delete"
+msgstr "Slet"
+
+msgid "If exclusive, only the specified results will be returned"
+msgstr "Hvis det er eksklusivt, returneres kun de angivne resultater"
+
+msgid "Referring items"
+msgstr "Henvisende emner"
+
+msgid "The node ID of the referenced node. Change the weight by reordering elements."
+msgstr "Noden ID for den henviste node. Skift vægten ved at omorganisere elementer."
+
+msgid "Datetime when this search phrase is active"
+msgstr "Dato, hvor denne søgeudtryk er aktiv"

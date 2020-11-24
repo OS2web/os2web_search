@@ -10,5 +10,5 @@ dependencies:
   - search_api_autocomplete
   - search_api_solr
   - search_api_spellcheck
-
-
+'interface translation project': os2web_search
+'interface translation server pattern': modules/contrib/os2web_search/translations/os2web_search-%language.po
