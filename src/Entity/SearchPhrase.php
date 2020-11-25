@@ -137,7 +137,7 @@ class SearchPhrase extends ContentEntityBase implements ContentEntityInterface {
    *    Phrase is exclusive.
    */
   public function isExclusive() {
-    return $this->exclusive->getValue();
+    return $this->exclusive->value;
   }
 
   /**
