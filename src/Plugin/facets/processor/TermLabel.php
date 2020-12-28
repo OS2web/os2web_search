@@ -63,8 +63,14 @@ class TermLabel extends ProcessorPluginBase implements BuildProcessorInterface {
         ->getStorage('taxonomy_term')
         ->loadTree($vocabulary);
 
+      $termsNames = [];
+      foreach ($terms as $term) {
+        $termsNames[$term->tid] = $term->name;
+      }
+
       foreach ($results as $key => &$result) {
-        $result->setDisplayValue($terms[$key]->name);
+        $tid = $result->getRawValue();
+        $result->setDisplayValue($termsNames[$tid]);
       }
     }
     catch (\Exception $e) {
