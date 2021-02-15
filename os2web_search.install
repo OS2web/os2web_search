@@ -1,0 +1,15 @@
+<?php
+
+/**
+ * Create os2web_search_phrase entity.
+ */
+function os2web_search_update_8001() {
+  $entity_type_manager = \Drupal::entityTypeManager();
+  $entity_type_manager->clearCachedDefinitions();
+  $entity_type = $entity_type_manager->getDefinition('os2web_search_phrase');
+  \Drupal::entityDefinitionUpdateManager()->installEntityType($entity_type);
+
+  drupal_flush_all_caches();
+
+  return t('Installed the os2web_search_phrase entity type');
+}
