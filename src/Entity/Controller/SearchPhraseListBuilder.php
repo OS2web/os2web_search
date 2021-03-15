@@ -3,11 +3,7 @@
 namespace Drupal\os2web_search\Entity\Controller;
 
 use Drupal\Core\Entity\EntityInterface;
-use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Entity\EntityListBuilder;
-use Drupal\Core\Entity\EntityStorageInterface;
-use Drupal\Core\Routing\UrlGeneratorInterface;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
  * Provides a list controller for os2web_search_phrase entity.
@@ -15,39 +11,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
  * @ingroup os2web_search
  */
 class SearchPhraseListBuilder extends EntityListBuilder {
-
-  /**
-   * The url generator.
-   *
-   * @var \Drupal\Core\Routing\UrlGeneratorInterface
-   */
-  protected $urlGenerator;
-
-  /**
-   * {@inheritdoc}
-   */
-  public static function createInstance(ContainerInterface $container, EntityTypeInterface $entity_type) {
-    return new static(
-      $entity_type,
-      $container->get('entity.manager')->getStorage($entity_type->id()),
-      $container->get('url_generator')
-    );
-  }
-
-  /**
-   * Constructs a new SearchPhraseListBuilder object.
-   *
-   * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
-   *   The entity type definition.
-   * @param \Drupal\Core\Entity\EntityStorageInterface $storage
-   *   The entity storage class.
-   * @param \Drupal\Core\Routing\UrlGeneratorInterface $url_generator
-   *   The url generator.
-   */
-  public function __construct(EntityTypeInterface $entity_type, EntityStorageInterface $storage, UrlGeneratorInterface $url_generator) {
-    parent::__construct($entity_type, $storage);
-    $this->urlGenerator = $url_generator;
-  }
 
   /**
    * {@inheritdoc}
