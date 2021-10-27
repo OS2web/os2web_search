@@ -20,6 +20,8 @@ Search page: ```/s```
 
 1. Create the SOLR core. [Read manual](https://git.drupalcode.org/project/search_api_solr#setting-up-solr-single-core).
 
+1. Make sure you have both `english` and `danish` language in your installation `/admin/config/regional/language`.
+
 1. Module is available to download via composer.
     ```
     composer require os2web/os2web_search
