@@ -35,9 +35,17 @@ class PhraseCatcher extends ProcessorPluginBase {
 
     $nowDateTime = DrupalDateTime::createFromTimestamp(time(), new \DateTimeZone(DateTimeItemInterface::STORAGE_TIMEZONE));
 
-    // Using native query in order to tke advantage of reverse LIKE operator.
+    // Using native query in order to take advantage of reverse REGEXP operator.
+    //
+    // The current query converts search params to regular expression:
+    // dog => ^(dog)$
+    // dog|cat => ^(dog|cat)$
+    // dog%|cat => ^(dog.*|cat)$
+    // dog|%cat%|turtle => ^(dog|.*cat.*|turtle)$
     $ids = \Drupal::database()
-      ->query("SELECT id FROM {os2web_search_search_phrases} ph WHERE :phrase LIKE ph.phrase AND (ph.period__value IS NULL or ph.period__value <= :now)
+      ->query("SELECT id FROM {os2web_search_search_phrases} ph
+  WHERE :phrase REGEXP CONCAT('^(', REPLACE(ph.phrase, '%', '.*'),')$')
+  AND (ph.period__value IS NULL or ph.period__value <= :now)
 	AND  (ph.period__end_value IS NULL or ph.period__end_value >= :now)", [
         ':phrase' => $query->getOriginalKeys(),
         ':now' => $nowDateTime->format(DateTimeItemInterface::DATETIME_STORAGE_FORMAT),
