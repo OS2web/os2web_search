@@ -6,7 +6,7 @@
     "prefer-stable": true,
     "license": "EUPL-1.2",
     "require": {
-        "drupal/facets": "^1.5",
+        "drupal/facets": "^2.0",
         "drupal/search_api": "^1.16",
         "drupal/search_api_attachments": "^1.0@beta",
         "drupal/search_api_autocomplete": "^1.3",
