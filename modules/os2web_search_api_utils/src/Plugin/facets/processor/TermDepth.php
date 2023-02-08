@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\os2web_search\Plugin\facets\processor;
+namespace Drupal\os2web_search_api_utils\Plugin\facets\processor;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\facets\FacetInterface;

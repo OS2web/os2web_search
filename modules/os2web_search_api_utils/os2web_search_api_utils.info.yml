@@ -1,0 +1,8 @@
+name: OS2Web search API utils
+type: module
+description: Providing search API enhancements
+core: 8.x
+core_version_requirement: ^8 || ^9
+package: OS2Web
+dependencies:
+  - drupal:search_api

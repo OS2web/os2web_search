@@ -13,3 +13,10 @@ function os2web_search_update_8001() {
 
   return t('Installed the os2web_search_phrase entity type');
 }
+
+/**
+ * Enabling module os2web_search_api_utils.
+ */
+function os2web_search_update_9001() {
+  \Drupal::service('module_installer')->install(['os2web_search_api_utils']);
+}
