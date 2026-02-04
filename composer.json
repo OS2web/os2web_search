@@ -12,6 +12,6 @@
         "drupal/search_api_autocomplete": "^1.8",
         "drupal/search_api_solr": "^4.3",
         "drupal/search_api_spellcheck": "^4.0",
-        "drupal/search_api_synonym": "^2.0"
+        "drupal/search_api_synonym": "^2.0 || ^3.0@beta"
     }
 }
